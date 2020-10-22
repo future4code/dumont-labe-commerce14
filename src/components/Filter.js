@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import styled from "styled-components";
 
 //STYLED COMPONENTS
@@ -21,17 +21,19 @@ const FilterSectionTitle = styled.h2`
 margin: 5px 0;
 `;
 //Props em componente funcional
+export const Filter = (props) => {
 
-function ValorMax(props){
- Number(props.texto)
+const  ValorMax = (props) => {
+  const value = Number(props.texto)
+
 const novoFilterValue = {
 'maxValue': value,
 }
 props.mudaFilter(novoFilterValue)
 }
 
-function ValorMin(props){
- Number(props.texto)
+const  ValorMin = (props) => {
+ const value = Number(props.value)
 
 const novoFilterValue = {
 'minValue': value,
@@ -40,51 +42,33 @@ const novoFilterValue = {
 props.mudaFilter(novoFilterValue)
 }
 
-
-function buscaProd(props){
- (props.texto)
 }
 
 
-//EXPORT CLASS FILTER
-export class Filter extends React.Component {
 
-// state = {
-// valorMax:
-// valorMin:
-// buscaProd:
-
-// }
-
-
-
-
-
-
-
-render() {
 return (
 <FilterContainer>
 <h3>Filtros:</h3>
 
 <InputContainer>
-<label for="valormin">Valor Minimo:</label>
-<input type="number" min={0} name="valorMin" onChange{ ValorMin}></input>
+<label htmlFor="valorMin">Valor Minimo:</label>
+<input type="number" min={0} name="valorMin" onChange={ ValorMin} />
 </InputContainer>
 
 <InputContainer>
-<label for="valormax">Valor Maximo:</label>
-<input type="number" min={0} name="valorMax" onChange{ ValorMax}></input>
+<label htmlFor="valormax">Valor Maximo:</label>
+<input type="number" min={0} name="valorMax" onChange={ ValorMax} />
 </InputContainer>
 
 <InputContainer>
 <label >Buscar Produto:</label>
-<input type="text" name="busca" value={this.props.buscaValue} onChange{props.buscaProd} />
+<input type="text" name="busca" value={props.buscaValue} onChange={props.buscaProd} />
 </InputContainer>
 </FilterContainer>
 );
-}
-}
+
+
+
 
 Filter.propTypes ={
  mudaFilter: PropTypes.func.isRequired,
