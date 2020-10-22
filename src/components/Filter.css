@@ -1,0 +1,18 @@
+. FilterContainer {
+  min-height: 60vh;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+
+.InputContainer  {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  /* margin: 10px 0; */
+}
+
+.FilterSectionTitle {
+  margin: 5px 0;
+}

@@ -20,9 +20,42 @@ const InputContainer = styled.label`
 const FilterSectionTitle = styled.h2`
   margin: 5px 0;
 `;
+ //Props em componente funcional
+
+ function ValorMax(props){
+   return Number(props.texto)
+
+ }
+
+ function ValorMin(props){
+   return Number(props.texto)
+
+ }
+
+ function buscaProd(props){
+   return (props.texto)
+ 
+ }
+
+
 
 //EXPORT CLASS FILTER
-export class Filter extends React.Component {
+export   class Filter extends React.Component {
+
+  // state = {
+  //   valorMax:
+  //   valorMin:
+  //   buscaProd:
+
+  // }
+
+
+
+
+
+
+
+
   render() {
     return (
       <FilterContainer>
@@ -40,7 +73,7 @@ export class Filter extends React.Component {
 
         <InputContainer>
           <label >Buscar Produto:</label>
-          <input type="text"  name="busca"></input>
+          <input type="text"  name="busca" ></input>
         </InputContainer>
       </FilterContainer>
     );
