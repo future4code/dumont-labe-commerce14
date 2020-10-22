@@ -20,11 +20,12 @@ margin: 10px 0;
 const FilterSectionTitle = styled.h2`
 margin: 5px 0;
 `;
+
 //Props em componente funcional
 export const Filter = (props) => {
 
-const  ValorMax = (props) => {
-  const value = Number(props.texto)
+const  ValorMax = (event) => {
+  const value = Number(event.target.value)
 
 const novoFilterValue = {
 'maxValue': value,
@@ -32,8 +33,8 @@ const novoFilterValue = {
 props.mudaFilter(novoFilterValue)
 }
 
-const  ValorMin = (props) => {
- const value = Number(props.value)
+const  ValorMin = (event) => {
+ const value = Number(event.target.value)
 
 const novoFilterValue = {
 'minValue': value,
@@ -41,10 +42,6 @@ const novoFilterValue = {
 
 props.mudaFilter(novoFilterValue)
 }
-
-}
-
-
 
 return (
 <FilterContainer>
@@ -65,16 +62,27 @@ return (
 <input type="text" name="busca" value={props.buscaValue} onChange={props.buscaProd} />
 </InputContainer>
 </FilterContainer>
-);
+)
+}
 
-
-
-
-Filter.propTypes ={
- mudaFilter: PropTypes.func.isRequired,
-handleSearchChange: PropTypes.func.isRequired,
+FilterContainer.propTypes = {
+  mudaFilter:PropTypes.func.isRequired,
+  buscaProd: PropTypes.func.isRequired,
 buscaValue: PropTypes.string.isRequired,
 }
+
+
+
+
+
+
+
+
+// Filter.propTypes ={
+//  mudaFilter: PropTypes.func.isRequired,
+// handleSearchChange: PropTypes.func.isRequired,
+// buscaValue: PropTypes.string.isRequired,
+// }
 
 // export const Filter = (props) => {
 
