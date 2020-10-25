@@ -3,25 +3,37 @@ import styled from "styled-components"
 
 const CardContainer = styled.div`
 border: dotted 1px black;
-display:flex;
-flex-direction:column;
+
+
+
+
 `
 const CardInfor = styled.div`
+display: flex;
+    flex-direction: column;
+    padding: 10px;
+
 
 `
+const AddToCartButton = styled.button`
+    align-self: center;
+    font-size: 12px; 
+   
+`
 
-export class ProductCard extends React.Component{
+
+export class ProductCards extends React.Component{
     render(){
         const product = this.props.product
-        return(
-            <CardContainer>
-        <img src = {`https://picsum.photos/id/237/200/300`}/>
+        
+        return <CardContainer>
+        <img src = {product.photo}/>
         <CardInfor>
-            <p>Produto 1</p>
-            <p>R$5</p>
-            <button>Adicionar</button>
-        </CardInfor>
+            <p>{product.name}</p>
+            <p>R${product.price}.00</p>
+            <AddToCartButton onClick={() =>this.props.onAddProductToCart(product.id)}>Adicionar ao carrinho</AddToCartButton>
+            </CardInfor>
         </CardContainer>
-        )
+        
     }
 }
