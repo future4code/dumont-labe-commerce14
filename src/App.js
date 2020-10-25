@@ -97,24 +97,6 @@ onChangeNameFilter = (event) =>{
 this.setState({nameFilter:event.target.value})
 }
 
-componentDidMount = () => {
-  const carrinhoLocal = JSON.parse(localStorage.getItem('carrinho'));
-  
-  if (carrinhoLocal) {
-
-    this.setState({
-      productsInCart: carrinhoLocal
-    })
-
-  }
-}
-
-componentDidUpdate = () => {
-  let productsInCart = [...this.state.productsInCart];
- 
-  localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
-}
-
 
 onRemoveProductFromCart = (id) =>{
   let productsInCart = [...this.state.productsInCart];
