@@ -1,17 +1,13 @@
-
-//FEITO MICHAEL SOTO
 import React from 'react'
 import styled from 'styled-components';
 
 const ItemContainer = styled.div`
-display:grid;
-grid-auto-flow: column;
-gap:4px;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    padding: 8px;
 
-p   {
-    margin: 0;
-}
 `
 
 
